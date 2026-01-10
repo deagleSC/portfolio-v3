@@ -11,6 +11,7 @@ export interface HeroData {
   image: string;
   socialLinks: SocialLink[];
   resumeUrl: string;
+  openToWork?: boolean;
 }
 
 export interface Experience {

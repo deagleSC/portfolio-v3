@@ -11,7 +11,7 @@ const CLOSE_THRESHOLD_PX = 200; // If dragged below this, close the sheet
 
 // Snap points for sheet width (in percent)
 const SNAP_POINTS = [40, 50, 70] as const;
-const DEFAULT_WIDTH_PERCENT = SNAP_POINTS[0]; // Default: 40%
+const DEFAULT_WIDTH_PERCENT = SNAP_POINTS[1]; // Default: 50% (half screen)
 
 // Find the nearest snap point to a given width
 function findNearestSnapPoint(width: number): number {

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Github, Linkedin, Twitter, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,7 +25,6 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function HeroSection() {
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
-  const hasSnapped = useRef(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   const handleScrollToExperience = () => {
@@ -41,36 +40,6 @@ export function HeroSection() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  // Mobile scroll snap: when user scrolls past a threshold, snap to experience section
-  useEffect(() => {
-    const isMobile = window.innerWidth < 640;
-    if (!isMobile) return;
-
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const heroHeight = sectionRef.current?.offsetHeight || window.innerHeight;
-      const threshold = heroHeight * 0.15; // 15% scroll triggers snap
-
-      if (scrollY > threshold && !hasSnapped.current) {
-        hasSnapped.current = true;
-        // Scroll to just past the hero section (hero height minus some padding)
-        const scrollTarget = heroHeight - 100;
-        window.scrollTo({
-          top: scrollTarget,
-          behavior: "smooth",
-        });
-      }
-
-      // Reset snap flag when scrolled back to top
-      if (scrollY < 10) {
-        hasSnapped.current = false;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <section
@@ -111,17 +80,19 @@ export function HeroSection() {
           {/* Content */}
           <div className="text-center lg:text-left">
             {/* Tagline */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-              className="mb-4"
-            >
-              <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20 dark:bg-teal-400/10 dark:text-teal-300 dark:border-teal-400/20">
-                <span className="w-1.5 h-1.5 bg-primary rounded-full dark:bg-teal-300" />
-                Open to opportunities
-              </span>
-            </motion.div>
+            {heroData.openToWork === true && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                className="mb-4"
+              >
+                <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20 dark:bg-teal-400/10 dark:text-teal-300 dark:border-teal-400/20">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full dark:bg-teal-300" />
+                  Open to opportunities
+                </span>
+              </motion.div>
+            )}
 
             {/* Name */}
             <motion.h1
@@ -233,7 +204,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-          className="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
           <button
             onClick={handleScrollToExperience}

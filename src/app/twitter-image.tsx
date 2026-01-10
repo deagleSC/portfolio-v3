@@ -5,102 +5,51 @@ export const runtime = "edge";
 export const alt = "Supratik Chakraborty - Full-Stack Software Engineer";
 export const size = {
   width: 1200,
-  height: 630,
+  height: 1200,
 };
 export const contentType = "image/png";
 
 export default async function Image() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://supratikch.com";
+
   return new ImageResponse(
     <div
       style={{
         height: "100%",
         width: "100%",
         display: "flex",
-        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#0f172a",
-        backgroundImage:
-          "radial-gradient(circle at 25% 25%, rgba(100, 255, 218, 0.15) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(100, 255, 218, 0.1) 0%, transparent 50%)",
+        position: "relative",
       }}
     >
-      {/* Profile Image Circle */}
+      {/* Profile Image - Large and Centered */}
       <div
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: 150,
-          height: 150,
+          width: 800,
+          height: 800,
           borderRadius: "50%",
-          border: "4px solid #64ffda",
+          border: "8px solid #64ffda",
           overflow: "hidden",
-          marginBottom: 30,
+          boxShadow: "0 0 100px rgba(100, 255, 218, 0.3)",
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://supratikch.com/profile.png"
-          alt="Profile"
-          width={150}
-          height={150}
+          src={`${siteUrl}/profile.png`}
+          alt="Supratik Chakraborty"
+          width={800}
+          height={800}
           style={{
             objectFit: "cover",
+            width: "100%",
+            height: "100%",
           }}
         />
-      </div>
-
-      {/* Name */}
-      <div
-        style={{
-          display: "flex",
-          fontSize: 60,
-          fontWeight: 700,
-          color: "#ccd6f6",
-          marginBottom: 10,
-          letterSpacing: "-0.02em",
-        }}
-      >
-        Supratik Chakraborty
-      </div>
-
-      {/* Title */}
-      <div
-        style={{
-          display: "flex",
-          fontSize: 28,
-          color: "#64ffda",
-          marginBottom: 20,
-        }}
-      >
-        Full-Stack Software Engineer
-      </div>
-
-      {/* Description */}
-      <div
-        style={{
-          display: "flex",
-          fontSize: 20,
-          color: "#8892b0",
-          textAlign: "center",
-          maxWidth: 800,
-          lineHeight: 1.4,
-        }}
-      >
-        Enterprise SaaS • AI Solutions • FastAPI • React • Next.js
-      </div>
-
-      {/* Website URL */}
-      <div
-        style={{
-          display: "flex",
-          position: "absolute",
-          bottom: 40,
-          fontSize: 18,
-          color: "#64ffda",
-        }}
-      >
-        supratikch.com
       </div>
     </div>,
     {
