@@ -1,0 +1,176 @@
+{
+  "hero": {
+    "name": "Supratik Chakraborty",
+    "headline": "Software Engineer (Full-Stack) @ Trumio",
+    "description": "Building enterprise-grade SaaS platforms with a focus on admin governance, analytics, and compliance-first architectures. Experienced in designing multi-tenant systems, RBAC implementations, and LLM-powered automation pipelines. Working with FastAPI, React, MongoDB, and Azure to deliver scalable, production-ready solutions that reduce operational overhead and improve enterprise workflows.",
+    "image": "/profile.png",
+    "resumeUrl": "https://drive.google.com/file/d/1paFMWmHlPnBm9sRCOrU3GtfBC3sGF_jS/view?usp=sharing",
+    "socialLinks": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/deagleSC",
+        "icon": "github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/supratikch/",
+        "icon": "linkedin"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "id": "exp-1",
+      "company": "Trumio",
+      "role": "Software Engineer (Full-Stack)",
+      "period": "Mar 2024 - Present",
+      "location": "Remote",
+      "type": "Full-time",
+      "description": "Building enterprise-grade admin governance platforms and analytics infrastructure for AI-powered talent management solutions serving 5 enterprise customers (~500 users).",
+      "highlights": [
+        "Architected a multi-tenant, audit-ready admin backend with RBAC, license enforcement, and policy-driven workflows; reduced manual operational overhead by ~35%",
+        "Built authorization-aware analytics services for managerial evaluation and reporting with strict tenant isolation; improved stakeholder decision cycles by ~40%",
+        "Designed a resilient analytics ingestion layer integrating Google Analytics and Hotjar with schema validation and fault tolerance; increased behavioral data coverage by ~70%",
+        "Orchestrated a backend processing pipeline handling 200–300 PRs/feedback records per month with PII masking and NDA boundaries; cut manual review effort by ~50%",
+        "Owned backend delivery for 10+ production releases with bi-weekly deployments; cut post-release incidents by ~30%",
+        "Initiated a 40+ component internal design system distributed as an npm package; improved UI consistency and optimized frontend delivery time by ~20%"
+      ],
+      "technologies": [
+        "FastAPI",
+        "Python",
+        "MongoDB",
+        "REST APIs",
+        "Azure",
+        "Vite",
+        "React",
+        "Git"
+      ]
+    },
+    {
+      "id": "exp-2",
+      "company": "Reunion",
+      "role": "Software Development Engineer (SDE-1)",
+      "period": "Oct 2023 - Mar 2024",
+      "location": "Mumbai, India",
+      "type": "Full-time",
+      "description": "Enhanced and maintained backend scraping infrastructure and data pipelines for real-estate data aggregation from government portals.",
+      "highlights": [
+        "Enhanced web scraping pipelines using BeautifulSoup to extract structured data from 20+ government real-estate portals",
+        "Implemented distributed ingestion workflows with Celery + RabbitMQ processing 100+ records per run",
+        "Integrated Keycloak for secure, role-based access control across the platform"
+      ],
+      "technologies": [
+        "Python",
+        "Celery",
+        "RabbitMQ",
+        "Keycloak",
+        "BeautifulSoup"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "Chessvine",
+      "description": "AI Chess Analysis Platform powered by Gemini 2.0 Flash on GCP Cloud Run + Cloud Tasks, processing 20 files/batch with 15s latency and auto-generating 2 puzzles/game for personalized training. Full-stack SaaS with 15+ dashboard views, 12 API endpoints, and Google OAuth; deployed with 99.5% uptime via Dockerized Cloud Build CI/CD.",
+      "image": "/chessvine-dark.png",
+      "imageDark": "/chessvine-dark.png",
+      "imageLight": "/chessvine-light.png",
+      "technologies": [
+        "Next.js",
+        "Express",
+        "MongoDB",
+        "GCP Cloud Run",
+        "Gemini 2.0",
+        "Docker",
+        "Google OAuth"
+      ],
+      "links": [
+        {
+          "type": "live",
+          "url": "https://chessvine.vercel.app"
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "languages": [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "HTML/CSS",
+      "C++",
+      "SQL"
+    ],
+    "frameworks": [
+      "FastAPI",
+      "Node.js",
+      "Express",
+      "React",
+      "Next.js",
+      "Vite",
+      "Zustand",
+      "Redux"
+    ],
+    "tools": [
+      "Azure",
+      "Keycloak",
+      "GitHub Actions",
+      "Docker",
+      "Linux",
+      "Git",
+      "GitHub",
+      "LaTeX"
+    ]
+  },
+  "education": {
+    "institution": "West Bengal University of Technology",
+    "location": "Kolkata, India",
+    "degree": "B.Tech in Information Technology",
+    "cgpa": "9.11",
+    "period": "Jul 2019 - Aug 2023"
+  },
+  "contact": {
+    "email": "supratikofficial1@gmail.com",
+    "message": "Open to conversations about full-stack engineering roles, AI-integrated product development, or tackling complex enterprise challenges together.",
+    "socialLinks": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/deagleSC",
+        "icon": "github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/supratikch/",
+        "icon": "linkedin"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:supratikofficial1@gmail.com",
+        "icon": "mail"
+      }
+    ]
+  },
+  "navItems": [
+    {
+      "label": "Home",
+      "href": "#hero",
+      "isExternal": false
+    },
+    {
+      "label": "Experience",
+      "href": "#experience",
+      "isExternal": false
+    },
+    {
+      "label": "Projects",
+      "href": "#projects",
+      "isExternal": false
+    },
+    {
+      "label": "Contact",
+      "href": "#contact",
+      "isExternal": false
+    }
+  ]
+}

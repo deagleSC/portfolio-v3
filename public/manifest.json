@@ -1,0 +1,26 @@
+{
+  "name": "Supratik Chakraborty - Full-Stack Software Engineer",
+  "short_name": "Supratik C.",
+  "description": "Full-Stack Software Engineer specializing in enterprise SaaS platforms, multi-tenant architectures, and AI-powered solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#64ffda",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/profile.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/profile.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["portfolio", "business", "technology"],
+  "lang": "en-US"
+}
