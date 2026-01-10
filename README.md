@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing my experience as a Full-Stack Software Engineer specializing in enterprise SaaS platforms and AI-powered solutions.
 
-**Live:** [supratikch.vercel.app](https://supratikch.vercel.app)
+**Live:** [supratikch.com](https://supratikch.com)
 
 ---
 
@@ -61,7 +61,7 @@ All portfolio content is managed in `src/data/data.json`:
 ### Environment
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://supratikch.vercel.app
+NEXT_PUBLIC_SITE_URL=https://supratikch.com
 ```
 
 ### Theme
