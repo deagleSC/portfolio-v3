@@ -153,6 +153,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/icon.png",
+  },
   category: "technology",
   verification: {
     // Get this from Google Search Console after verification
@@ -297,6 +305,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/icon.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/icon.png" type="image/png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link rel="shortcut icon" href="/icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"
