@@ -24,20 +24,28 @@ export const viewport: Viewport = {
 };
 
 // SEO-optimized description - Name first for better ranking
+// Differentiated from academic Supratik Chakraborty (IIT Bombay professor) by emphasizing:
+// - Software Engineering (not computer science research)
+// - Full-Stack Development (not formal methods)
+// - Industry experience (Trumio, not academia)
+// - Specific tech stack and location (Kolkata)
 const seoDescription =
-  "Supratik Chakraborty - Full-Stack Software Engineer building enterprise SaaS platforms and AI-powered solutions. Expert in FastAPI, React, Next.js, Python, MongoDB, and Azure. Specializing in multi-tenant architectures, RBAC, and LLM integrations. Currently at Trumio building admin governance and analytics infrastructure.";
+  "Supratik Chakraborty - Full-Stack Software Engineer from Kolkata, India. Building enterprise SaaS platforms and AI-powered solutions at Trumio. Expert in FastAPI, React, Next.js, Python, MongoDB, and Azure. Specializing in multi-tenant architectures, RBAC, and LLM integrations. Industry software engineer (not to be confused with IIT Bombay professor).";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     // Name-first title for better search ranking
+    // Added differentiation: "Software Engineer" (not "Computer Scientist")
+    // Added location context: "Kolkata" to differentiate from IIT Bombay professor
     default:
-      "Supratik Chakraborty | Full-Stack Software Engineer | AI & Enterprise SaaS",
+      "Supratik Chakraborty | Full-Stack Software Engineer | Kolkata, India | Trumio",
     template: `%s | Supratik Chakraborty`,
   },
   description: seoDescription,
   keywords: [
     // PRIMARY: Name variations (highest priority)
+    // Differentiated keywords to rank above academic namesake
     "Supratik",
     "Supratik Chakraborty",
     "Supratik C",
@@ -48,6 +56,12 @@ export const metadata: Metadata = {
     "Supratik Chakraborty Trumio",
     "Supratik Chakraborty Kolkata",
     "Supratik Chakraborty India",
+    "Supratik Chakraborty full stack",
+    "Supratik Chakraborty fullstack",
+    "Supratik Chakraborty web developer",
+    "Supratik Chakraborty industry",
+    "Supratik Chakraborty not IIT Bombay",
+    "Supratik Chakraborty software engineer not professor",
     // PRIMARY: Role keywords
     "Software Engineer",
     "Full Stack Developer",
@@ -153,11 +167,14 @@ export const metadata: Metadata = {
 };
 
 // JSON-LD Structured Data for Person (enhanced)
+// Added alternateName, additionalType, and more specific identifiers
+// to differentiate from academic namesake
 const personJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
+  "@type": ["Person", "SoftwareDeveloper"],
   "@id": `${siteUrl}/#person`,
   name: portfolioData.hero.name,
+  alternateName: ["supratikch", "deagleSC", "Supratik C"],
   givenName: "Supratik",
   familyName: "Chakraborty",
   url: siteUrl,
@@ -171,12 +188,20 @@ const personJsonLd = {
   worksFor: {
     "@type": "Organization",
     name: "Trumio",
+    url: "https://trumio.com",
   },
   description: seoDescription,
   email: "supratikofficial1@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Kolkata",
+    addressRegion: "West Bengal",
+    addressCountry: "India",
+  },
   sameAs: [
     "https://github.com/deagleSC",
     "https://www.linkedin.com/in/supratikch/",
+    siteUrl,
   ],
   knowsAbout: [
     "Full-Stack Development",
@@ -250,6 +275,20 @@ const professionalServiceJsonLd = {
   ],
 };
 
+// JSON-LD for BreadcrumbList (helps with search result display)
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteUrl,
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -266,6 +305,7 @@ export default function RootLayout({
               personJsonLd,
               websiteJsonLd,
               professionalServiceJsonLd,
+              breadcrumbJsonLd,
             ]),
           }}
         />
